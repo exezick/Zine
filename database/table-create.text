@@ -1,0 +1,15 @@
+---------------------- CATEGORY -------------------------
+create table category (
+	cat_id int(20) not null auto_increment primary key,
+	categoryname varchar(100) not null
+)ENGINE = INNODB
+
+---------------------- VIDEOS -------------------------
+create table videos (
+	vid_id int(20) not null auto_increment primary key,
+	cat_id int(20) not null,
+    title varchar(200) not null,
+CONSTRAINT
+	category_id_fk FOREIGN KEY(cat_id)
+	REFERENCES category(cat_id)
+)ENGINE = INNODB
